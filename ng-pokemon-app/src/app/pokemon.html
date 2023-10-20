@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Liste Pokemons</title>
+</head>
+<body>
+    <div style="text-align:center" class="content">
+        <h1>Liste des Pokemons!</h1>
+     </div>
+     <input
+        #input (keyup)="0" 
+       (keyup.enter)="selectedPokemon(input.value)"
+        type="text"
+     />
+     <p *ngIf="pokemonSelected">
+       Vous avez selectioné pokemon: {{pokemonSelected?.name}}
+    </p>
+     <p *ngIf="!pokemonSelected">
+        Aucun pokemon ne se trouve!
+     </p>
+    <br/>
+
+     <input
+       type="number"
+       (click)="selectPokemon($event)"
+     />
+     <ul *ngFor="let pokemon of pokemonList">
+        <li class="card-panel teal lighten-2">{{pokemon.name}}</li>
+     </ul>
+</body>
+</html>
+
