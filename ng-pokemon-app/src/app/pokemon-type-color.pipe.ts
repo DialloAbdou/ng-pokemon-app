@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class PokemonTypeColorPipe implements PipeTransform {
   transform(type: string): string {
     let color: string;
-
     switch (type) {
       case "Feu":
         color = "red lighten-1";
