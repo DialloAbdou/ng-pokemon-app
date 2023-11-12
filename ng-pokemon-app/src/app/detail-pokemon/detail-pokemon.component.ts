@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from '../pokemon';
 import { POKEMONS } from '../mock-pokemon-list';
 
@@ -17,7 +17,7 @@ export class DetailPokemonComponent implements OnInit{
   /**
    *
    */
-  constructor(private route : ActivatedRoute) {
+  constructor(private route : ActivatedRoute, private router:Router) {
     
   }
 
@@ -30,5 +30,8 @@ export class DetailPokemonComponent implements OnInit{
     }
   }
 
-
+  gotToPokemomList()
+  {
+    this.router.navigate(['/pokemons'])
+  }
 }
